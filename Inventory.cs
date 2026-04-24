@@ -3,7 +3,7 @@
 public class Inventory<T> : IEnumerable<T> where T : Item
 {
     private List<T> items = new List<T>();
-    public double MaxWeight { get; private set; }
+    public double MaxWeight { get; }
     public double CurrentWeight { get; private set; }
 
     public Inventory(double maxWeight)
@@ -60,6 +60,6 @@ public class Inventory<T> : IEnumerable<T> where T : Item
 
     System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
     {
-        return GetEnumerator();
+        return GetEnumerator(); 
     }
 }

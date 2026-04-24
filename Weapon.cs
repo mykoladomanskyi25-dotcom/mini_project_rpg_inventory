@@ -2,7 +2,7 @@
 
 public class Weapon : Item
 {
-    public int AttackBonus { get; set; }
+    public int AttackBonus { get; }
     public Weapon(string name, double weight, Rarity rarityLevel, int attackBonus) : base(name, weight, rarityLevel)
     {
         AttackBonus = attackBonus;

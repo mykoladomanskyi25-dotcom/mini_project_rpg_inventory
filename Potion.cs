@@ -2,7 +2,7 @@
 
 public class Potion : Item
 {
-    public int HealAmount { get; set; }
+    public int HealAmount { get; }
     public Potion(string name, double weight, Rarity rarityLevel, int healAmount) : base(name, weight, rarityLevel)
     {
         HealAmount = healAmount;

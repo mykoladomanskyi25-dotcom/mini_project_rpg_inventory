@@ -2,9 +2,9 @@
 
 public abstract class Item : IComparable<Item>
 {
-    public string Name { get; set; }
-    public double Weight { get; set; }
-    public Rarity RarityLevel { get; set; }
+    public string Name { get; }
+    public double Weight { get; }
+    public Rarity RarityLevel { get; }
     
     
     public Item(string name, double weight, Rarity rarityLevel)
@@ -25,7 +25,7 @@ public abstract class Item : IComparable<Item>
     
     public abstract void Use(Hero hero);
 
-    public int CompareTo(Item? other)
+    public int CompareTo(Item other)
     {
         if (other == null) return 1;
         
@@ -35,6 +35,6 @@ public abstract class Item : IComparable<Item>
             return rarityComparison;
         }
         
-        return Name.CompareTo(other.Name);
+        return Name.CompareTo(other.Name); // сортування по алфавіту
     }
 }

@@ -2,7 +2,7 @@
 
 public class Armor : Item
 {
-    public int DefenseBonus { get; set; }
+    public int DefenseBonus { get; }
 
     public Armor(string name, double weight, Rarity rarityLevel, int defenseBonus) : base(name,
         weight, rarityLevel)
