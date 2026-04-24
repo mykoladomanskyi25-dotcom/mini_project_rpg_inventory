@@ -6,12 +6,17 @@ public class Inventory<T> : IEnumerable<T> where T : Item
     public double MaxWeight { get; private set; }
     public double CurrentWeight { get; private set; }
 
-    public Inventory(double maxWeight, double currentWeight)
+    public Inventory(double maxWeight)
     {
         MaxWeight = maxWeight;
-        CurrentWeight = currentWeight;
+        CurrentWeight = 0;
     }
 
+    public void SortByRarity()
+    {
+        items.Sort();
+    }
+    
     public void AddItem(T item)
     {
         if (CurrentWeight + item.Weight <= MaxWeight)
@@ -40,7 +45,7 @@ public class Inventory<T> : IEnumerable<T> where T : Item
     {
         foreach (var item in items)
         {
-            if (item.Name == name)
+            if (item.Name.Equals(name.Trim()))
             {
                 return item;
             }
